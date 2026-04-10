@@ -56,13 +56,13 @@ UI/UX и функциональные проверки:\
 На скриншоте заметны две сетевые ошибки *NS_ERROR_UNKNOWN_HOST* и одна *404 Not Found*.\
 
 
-| ID |	Summary |	Steps to Reproduce |	Expected Result |	Actual Result |	Severity |	Environment |
-|----|----|----|----|----|----|----|
-| BUG-01 |	Ошибка 404 при загрузке favicon.ico |	1. Открыть страницу логина. 2. Проверить вкладку Network. |	Иконка сайта загружается со статусом 200 OK. |	Ошибка 404 Not Found для файла favicon.ico. |	Low |	Desktop Chrome/Firefox |
-| BUG-02 |	Ошибка соединения с доменом optimizely.com |	1. Загрузить страницу. 2. Проверить консоль/сеть. |	Все внешние скрипты аналитики загружаются без ошибок. |	Статус NS_ERROR_UNKNOWN_HOST. Скрипт аналитики блокируется или недоступен. |	Low |	Desktop Firefox (судя по скрину) |
-| BUG-03 |	Некорректный текст ошибки (User-friendly check) |	1. Ввести валидный логин. 2. Ввести верный пароль, но с лишним пробелом в конце. |	Система должна либо «обрезать» пробел, либо дать четкую инструкцию. |	Общая ошибка "Your password is invalid!", не указывающая на лишний символ. |	Medium |	Любой браузер |
-| BUG-04 | Куки  «optimizelyPendingLogEvents» и «optimizelyBuckets» была отклонена из-за некорректного домена.|1. Загрузить страницу. 2. Проверить консоль/сеть.| Куки устанавливаются корректно согласно настройкам безопасности |	Medium |	Любой браузер |
-
+| ID |	Summary |	Steps to Reproduce |	Expected Result |	Actual Result |	Severity |	Environment | Screenshot or Video of bug | URL |
+|----|----|----|----|----|----|----|----|----|
+| BUG-01 |	Ошибка 404 при загрузке favicon.ico |	1. Открыть страницу логина. 2. Проверить вкладку Network. |	Иконка сайта загружается со статусом 200 OK. |	Ошибка 404 Not Found для файла favicon.ico. |	Low |	Desktop Chrome/Firefox | [(основа скриншот!)](image.png) | https://the-internet.herokuapp.com/login |
+| BUG-02 |	Ошибка соединения с доменом optimizely.com |	1. Загрузить страницу. 2. Проверить консоль/сеть. |	Все внешние скрипты аналитики загружаются без ошибок. |	Статус NS_ERROR_UNKNOWN_HOST. Скрипт аналитики блокируется или недоступен. |	Low |	Desktop Firefox (судя по скрину) | [(основа скриншот!)](image.png) | https://the-internet.herokuapp.com/login и https://the-internet.herokuapp.com/secure |
+| BUG-03 | Куки  «optimizelyPendingLogEvents» и «optimizelyBuckets» была отклонена из-за некорректного домена.|1. Загрузить страницу. 2. Проверить консоль/сеть.| Куки устанавливаются корректно согласно настройкам безопасности | Не загружаются |	Medium |	Любой браузер | https://the-internet.herokuapp.com/login и https://the-internet.herokuapp.com/secure |
+| BUG-04 | Img на кнопке "Login" не использует lazy_loading .|1. Нажми кнопку Logout. 2. Посмотри на кнопку Login при загрузке страницы.| Кнопка должна показываться в размере изначально намеченным.| Кнопка показывается а потом расширяется при загрузке картинки. |	low |	firefox dev | (Video!)](The Internet — Mozilla Firefox 2026-04-10 16-51-36.mp4) | https://the-internet.herokuapp.com/login |
+| BUG-05 | Fork_me_on_Github.img закрывает крестик в мобильной версии .|1. Нажми кнопку закрытия notification. | Кнопка должна быть доступна.| Кнопка показывается, но нажать на нее нельзя. |	Medium |	firefox dev | (Video!)](The Internet — Mozilla Firefox 2026-04-10 16-51-36.mp4) | https://the-internet.herokuapp.com/login |
 
 
 
